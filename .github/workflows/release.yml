@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Create Release Archive
+      run: |
+        # 創建發布壓縮檔
+        tar -czf deploy_free_ssl_by_certbot-${{ github.ref_name }}.tar.gz \
+          --exclude='.git*' \
+          --exclude='*.tar.gz' \
+          .
+          
+        # 創建 ZIP 檔案  
+        zip -r deploy_free_ssl_by_certbot-${{ github.ref_name }}.zip . \
+          -x '.git*' '*.tar.gz'
+    
+    - name: Extract Changelog
+      id: changelog
+      run: |
+        # 提取對應版本的變更日誌
+        VERSION=${{ github.ref_name }}
+        if grep -q "## \[$VERSION\]" CHANGELOG.md; then
+          awk "/## \[$VERSION\]/{flag=1; next} /## \[/{flag=0} flag" CHANGELOG.md > release_notes.md
+        else
+          echo "Release $VERSION" > release_notes.md
+        fi
+        
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: release_notes.md
+        files: |
+          deploy_free_ssl_by_certbot-${{ github.ref_name }}.tar.gz
+          deploy_free_ssl_by_certbot-${{ github.ref_name }}.zip
+        draft: false
+        prerelease: ${{ contains(github.ref_name, 'beta') || contains(github.ref_name, 'alpha') }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

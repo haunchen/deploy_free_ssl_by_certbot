@@ -1,0 +1,69 @@
+name: Shell Script Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    name: Shellcheck Analysis
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@master
+      with:
+        scandir: '.'
+        format: gcc
+        severity: warning
+        exclude_paths: |
+          .git
+          .github
+
+  syntax-check:
+    runs-on: ubuntu-latest
+    name: Bash Syntax Check
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check Bash Syntax
+      run: |
+        bash -n install.sh
+        bash -n deploy.sh
+        echo "✓ All scripts have valid syntax"
+
+  readme-check:
+    runs-on: ubuntu-latest
+    name: Documentation Check
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check Required Files
+      run: |
+        required_files=("README.md" "LICENSE" "CONTRIBUTING.md" "SECURITY.md" "CHANGELOG.md")
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Missing required file: $file"
+            exit 1
+          else
+            echo "✓ Found: $file"
+          fi
+        done
+
+    - name: Check README Links
+      run: |
+        # 檢查 README 中的內部連結
+        if grep -q "\[.*\](.*\.md)" README.md; then
+          echo "✓ README contains internal links"
+        fi
+        
+        # 檢查是否包含使用範例
+        if grep -q "```bash" README.md; then
+          echo "✓ README contains code examples"
+        fi
