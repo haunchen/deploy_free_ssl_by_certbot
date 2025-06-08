@@ -1,5 +1,5 @@
 {
-  "name": "deploy_free_ssl_by_certbot",
+  "name": "certbot-deploy",
   "version": "1.0.0",
   "description": "Automated SSL certificate deployment with Certbot and Nginx",
   "main": "install.sh",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haunchen/deploy_free_ssl_by_certbot.git"
+    "url": "git+https://github.com/haunchen/certbot-deploy.git"
   },
   "keywords": [
     "ssl",
@@ -29,9 +29,9 @@
   "author": "Frank Chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haunchen/deploy_free_ssl_by_certbot/issues"
+    "url": "https://github.com/haunchen/certbot-deploy/issues"
   },
-  "homepage": "https://github.com/haunchen/deploy_free_ssl_by_certbot#readme",
+  "homepage": "https://github.com/haunchen/certbot-deploy#readme",
   "engines": {
     "bash": ">=4.0"
   },

@@ -19,13 +19,13 @@ jobs:
     - name: Create Release Archive
       run: |
         # 創建發布壓縮檔
-        tar -czf deploy_free_ssl_by_certbot-${{ github.ref_name }}.tar.gz \
+        tar -czf certbot-deploy-${{ github.ref_name }}.tar.gz \
           --exclude='.git*' \
           --exclude='*.tar.gz' \
           .
           
         # 創建 ZIP 檔案  
-        zip -r deploy_free_ssl_by_certbot-${{ github.ref_name }}.zip . \
+        zip -r certbot-deploy-${{ github.ref_name }}.zip . \
           -x '.git*' '*.tar.gz'
     
     - name: Extract Changelog
@@ -44,8 +44,8 @@ jobs:
       with:
         body_path: release_notes.md
         files: |
-          deploy_free_ssl_by_certbot-${{ github.ref_name }}.tar.gz
-          deploy_free_ssl_by_certbot-${{ github.ref_name }}.zip
+          certbot-deploy-${{ github.ref_name }}.tar.gz
+          certbot-deploy-${{ github.ref_name }}.zip
         draft: false
         prerelease: ${{ contains(github.ref_name, 'beta') || contains(github.ref_name, 'alpha') }}
       env:

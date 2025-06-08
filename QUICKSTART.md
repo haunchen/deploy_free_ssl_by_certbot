@@ -24,8 +24,8 @@ sudo netstat -tlnp | grep ':80\|:443'
 
 ```bash
 # 下載專案
-git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
-cd deploy_free_ssl_by_certbot
+git clone https://github.com/haunchen/certbot-deploy.git
+cd certbot-deploy
 
 # 設定執行權限
 chmod +x install.sh deploy.sh
@@ -43,17 +43,17 @@ sudo ./deploy.sh your-domain.com
 
 ```bash
 # 方法 1: 使用 git
-git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
+git clone https://github.com/haunchen/certbot-deploy.git
 
 # 方法 2: 下載 ZIP
-wget https://github.com/haunchen/deploy_free_ssl_by_certbot/archive/main.zip
+wget https://github.com/haunchen/certbot-deploy/archive/main.zip
 unzip main.zip
 ```
 
 ### 步驟 2: 安裝依賴
 
 ```bash
-cd deploy_free_ssl_by_certbot
+cd certbot-deploy
 sudo ./install.sh
 ```
 
@@ -167,7 +167,7 @@ sudo tar -czf ssl-backup-$(date +%Y%m%d).tar.gz /etc/letsencrypt/
 sudo tar -czf nginx-backup-$(date +%Y%m%d).tar.gz /etc/nginx/
 ```
 
-需要幫助？查看 [故障排除指南](README.md#故障排除) 或 [提交 Issue](https://github.com/haunchen/deploy_free_ssl_by_certbot/issues/new)。
+需要幫助？查看 [故障排除指南](README.md#故障排除) 或 [提交 Issue](https://github.com/haunchen/certbot-deploy/issues/new)。
 
 ---
 
@@ -193,8 +193,8 @@ Before you begin, ensure you have:
 
 ```bash
 # Download project
-git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
-cd deploy_free_ssl_by_certbot
+git clone https://github.com/haunchen/certbot-deploy.git
+cd certbot-deploy
 
 # Set execution permissions
 chmod +x install.sh deploy.sh
@@ -204,10 +204,10 @@ chmod +x install.sh deploy.sh
 
 ```bash
 # Method 1: Using git
-git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
+git clone https://github.com/haunchen/certbot-deploy.git
 
 # Method 2: Download ZIP
-wget https://github.com/haunchen/deploy_free_ssl_by_certbot/archive/main.zip
+wget https://github.com/haunchen/certbot-deploy/archive/main.zip
 unzip main.zip
 ```
 
@@ -373,4 +373,4 @@ Always backup your configuration before making changes:
 sudo tar -czf nginx-backup-$(date +%Y%m%d).tar.gz /etc/nginx/
 ```
 
-Need help? Check the [Troubleshooting Guide](README.md#troubleshooting) or [Submit an Issue](https://github.com/haunchen/deploy_free_ssl_by_certbot/issues/new).
+Need help? Check the [Troubleshooting Guide](README.md#troubleshooting) or [Submit an Issue](https://github.com/haunchen/certbot-deploy/issues/new).

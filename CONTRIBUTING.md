@@ -29,8 +29,8 @@
 
 1. **Fork 專案**
    ```bash
-   git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
-   cd deploy_free_ssl_by_certbot
+   git clone https://github.com/haunchen/certbot-deploy.git
+   cd certbot-deploy
    ```
 
 2. **建立功能分支**
@@ -162,8 +162,8 @@ We welcome suggestions for new features! Before submitting:
 
 1. **Fork the project**
    ```bash
-   git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
-   cd deploy_free_ssl_by_certbot
+   git clone https://github.com/haunchen/certbot-deploy.git
+   cd certbot-deploy
    ```
 
 2. **Create a feature branch**

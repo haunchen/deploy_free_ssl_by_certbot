@@ -59,11 +59,11 @@ jobs:
     - name: Check README Links
       run: |
         # 檢查 README 中的內部連結
-        if grep -q "\[.*\](.*\.md)" README.md; then
+        if grep -q '\[.*\](.*\.md)' README.md; then
           echo "✓ README contains internal links"
         fi
         
         # 檢查是否包含使用範例
-        if grep -q "```bash" README.md; then
+        if grep -q '```bash' README.md; then
           echo "✓ README contains code examples"
         fi

@@ -1,6 +1,6 @@
 # Free SSL Certificate Deployment with Certbot
 
-[![Shell Script Validation](https://github.com/haunchen/deploy_free_ssl_by_certbot/actions/workflows/validation.yml/badge.svg)](https://github.com/haunchen/deploy_free_ssl_by_certbot/actions/workflows/validation.yml)
+[![Shell Script Validation](https://github.com/haunchen/certbot-deploy/actions/workflows/validation.yml/badge.svg)](https://github.com/haunchen/certbot-deploy/actions/workflows/validation.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
 
@@ -35,8 +35,8 @@
 ### 方法一：一鍵部署
 ```bash
 # 下載專案
-git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
-cd deploy_free_ssl_by_certbot
+git clone https://github.com/haunchen/certbot-deploy.git
+cd certbot-deploy
 
 # 一次性完成安裝和部署
 sudo ./install.sh && sudo ./deploy.sh your-domain.com
@@ -107,7 +107,7 @@ sudo ./deploy.sh blog.example.com
 ## 📁 專案結構
 
 ```
-deploy_free_ssl_by_certbot/
+certbot-deploy/
 ├── install.sh              # Certbot 安裝腳本
 ├── deploy.sh               # SSL 部署腳本  
 ├── test-ssl.sh             # SSL 測試腳本
@@ -223,7 +223,7 @@ openssl x509 -in /etc/letsencrypt/live/your-domain.com/cert.pem -text -noout
 
 ## 星星歷史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=haunchen/deploy_free_ssl_by_certbot&type=Date)](https://star-history.com/#haunchen/deploy_free_ssl_by_certbot&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=haunchen/certbot-deploy&type=Date)](https://star-history.com/#haunchen/certbot-deploy&Date)
 
 ---
 
@@ -270,8 +270,8 @@ A simple and easy-to-use script collection for installing Certbot and automatica
 ### Method 1: One-Click Deployment
 ```bash
 # Download project
-git clone https://github.com/haunchen/deploy_free_ssl_by_certbot.git
-cd deploy_free_ssl_by_certbot
+git clone https://github.com/haunchen/certbot-deploy.git
+cd certbot-deploy
 
 # Complete installation and deployment in one go
 sudo ./install.sh && sudo ./deploy.sh your-domain.com
@@ -342,7 +342,7 @@ This script checks:
 ## 📁 Project Structure
 
 ```
-deploy_free_ssl_by_certbot/
+certbot-deploy/
 ├── install.sh              # Certbot installation script
 ├── deploy.sh               # SSL deployment script
 ├── test-ssl.sh             # SSL testing script
@@ -458,7 +458,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=haunchen/deploy_free_ssl_by_certbot&type=Date)](https://star-history.com/#haunchen/deploy_free_ssl_by_certbot&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=haunchen/certbot-deploy&type=Date)](https://star-history.com/#haunchen/certbot-deploy&Date)
 
 ---
 
